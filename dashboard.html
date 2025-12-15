@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+</head>
+
+<body class="page" data-theme="light">
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="#">Dashboard</a>
+        <a class="nav-item" href="#">Analytics</a>
+        <a class="nav-item" href="#">Users</a>
+        <a class="nav-item" href="#">Billing</a>
+        <a class="nav-item" href="settings.html">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="app-main">
+
+      <!-- TOP BAR -->
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Overview of your product performance</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="app-content">
+
+        <!-- KPI CARDS -->
+        <section class="grid grid--4">
+          <article class="card reveal">
+            <p class="card-label">Revenue</p>
+            <h3 class="card-value">€12,430</h3>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <p class="card-label">Active users</p>
+            <h3 class="card-value">1,284</h3>
+          </article>
+
+          <article class="card reveal reveal-delay-2">
+            <p class="card-label">Conversion</p>
+            <h3 class="card-value">3.4%</h3>
+          </article>
+
+          <article class="card reveal reveal-delay-3">
+            <p class="card-label">Churn</p>
+            <h3 class="card-value">0.8%</h3>
+          </article>
+        </section>
+
+        <!-- DATA -->
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">Recent activity</h2>
+          </header>
+
+          <div class="card card--table reveal">
+            <p class="muted">Table placeholder (users, events, logs)</p>
+          </div>
+        </section>
+
+        <!-- ACTIVITY -->
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">Activity feed</h2>
+          </header>
+
+          <div class="card reveal">
+            <ul class="activity-list">
+              <li>User signed up</li>
+              <li>Subscription upgraded</li>
+              <li>Invoice paid</li>
+            </ul>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>
