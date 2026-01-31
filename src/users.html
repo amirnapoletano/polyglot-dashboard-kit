@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../style.css" />
+  <script src="./main.js" defer></script>
+</head>
+
+<body class="page" data-theme="light" data-sidebar="expanded" data-nav="closed">
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" data-label="Dashboard" href="dashboard.html">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a class="nav-item" data-label="Analytics" href="#">
+          <span class="nav-icon" aria-hidden="true">◔</span>
+          <span class="nav-label">Analytics</span>
+        </a>
+        <a class="nav-item active" data-label="Users" href="users.html">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Users</span>
+        </a>
+        <a class="nav-item" data-label="Billing" href="#">
+          <span class="nav-icon" aria-hidden="true">⟠</span>
+          <span class="nav-label">Billing</span>
+        </a>
+        <a class="nav-item" data-label="Settings" href="settings.html">
+          <span class="nav-icon" aria-hidden="true">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+        <a class="nav-item" data-label="Pricing" href="pricing.html">
+          <span class="nav-icon" aria-hidden="true">€</span>
+          <span class="nav-label">Pricing</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="overlay" data-overlay></div>
+
+    <!-- MAIN -->
+    <div class="app-main">
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Users</h1>
+          <p class="page-subtitle">Manage customers, plans, and lifecycle status</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" data-sidebar-toggle>
+            <span class="sidebar-toggle-icon">☰</span>
+          </button>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <main class="app-content">
+
+        <section class="content-section">
+          <header class="section-header section-header--table">
+            <h2 class="section-title">Directory</h2>
+
+            <div class="table-controls">
+              <input
+                type="search"
+                class="table-search"
+                placeholder="Search name or email…"
+                aria-label="Search users"
+                data-users-search
+              />
+
+              <select class="table-sort" aria-label="Filter by status" data-users-status>
+                <option value="all">Status: All</option>
+                <option value="active">Active</option>
+                <option value="trial">Trial</option>
+                <option value="past-due">Past due</option>
+                <option value="canceled">Canceled</option>
+              </select>
+
+              <select class="table-sort" aria-label="Filter by plan" data-users-plan>
+                <option value="all">Plan: All</option>
+                <option value="solo">Solo</option>
+                <option value="team">Team</option>
+              </select>
+            </div>
+          </header>
+
+          <div class="card reveal">
+            <div class="table-wrap">
+              <table class="table" data-users-table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Plan</th>
+                    <th>Status</th>
+                    <th style="text-align:right;">MRR</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-status="active" data-plan="team">
+                    <td>Alex Morgan · alex.morgan@email.com</td>
+                    <td>Team</td>
+                    <td><span class="pill pill--good">Active</span></td>
+                    <td style="text-align:right;">€59</td>
+                  </tr>
+                  <tr data-status="trial" data-plan="solo">
+                    <td>Sam Lee · sam.lee@email.com</td>
+                    <td>Solo</td>
+                    <td><span class="pill">Trial</span></td>
+                    <td style="text-align:right;">€0</td>
+                  </tr>
+                  <tr data-status="past-due" data-plan="solo">
+                    <td>Maria Rossi · maria.rossi@email.com</td>
+                    <td>Solo</td>
+                    <td><span class="pill pill--warn">Past due</span></td>
+                    <td style="text-align:right;">€29</td>
+                  </tr>
+                  <tr data-status="canceled" data-plan="team">
+                    <td>Noah Khan · noah.khan@email.com</td>
+                    <td>Team</td>
+                    <td><span class="pill pill--bad">Canceled</span></td>
+                    <td style="text-align:right;">€0</td>
+                  </tr>
+                  <tr data-status="active" data-plan="solo">
+                    <td>Giulia Bianchi · giulia@email.com</td>
+                    <td>Solo</td>
+                    <td><span class="pill pill--good">Active</span></td>
+                    <td style="text-align:right;">€29</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="empty">
+              <h3 class="empty-title">Tip: wire this later</h3>
+              <p class="empty-text">
+                This page is UI-only. Connect your backend and replace the rows, or render via your framework of choice.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

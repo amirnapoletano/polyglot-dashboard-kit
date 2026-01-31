@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../style.css" />
+  <script src="./main.js" defer></script>
+</head>
+
+<body class="page" data-theme="light" data-sidebar="expanded" data-nav="closed">
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" data-label="Dashboard" href="dashboard.html">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a class="nav-item" data-label="Analytics" href="#">
+          <span class="nav-icon" aria-hidden="true">◔</span>
+          <span class="nav-label">Analytics</span>
+        </a>
+        <a class="nav-item" data-label="Users" href="users.html">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Users</span>
+        </a>
+        <a class="nav-item" data-label="Billing" href="#">
+          <span class="nav-icon" aria-hidden="true">⟠</span>
+          <span class="nav-label">Billing</span>
+        </a>
+        <a class="nav-item" data-label="Settings" href="settings.html">
+          <span class="nav-icon" aria-hidden="true">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+        <a class="nav-item active" data-label="Pricing" href="pricing.html">
+          <span class="nav-icon" aria-hidden="true">€</span>
+          <span class="nav-label">Pricing</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="app-main">
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Pricing</h1>
+          <p class="page-subtitle">License your dashboard UI kit and ship faster</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" data-sidebar-toggle>
+            <span class="sidebar-toggle-icon">☰</span>
+          </button>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <main class="app-content">
+
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">Simple, one-time purchase</h2>
+          </header>
+
+          <section class="grid grid--2">
+            <article class="card reveal">
+              <header class="card-header">
+                <div>
+                  <p class="card-label">Solo</p>
+                  <h3 class="card-title">€39</h3>
+                </div>
+                <div class="chip">Personal license</div>
+              </header>
+
+              <ul class="activity-list">
+                <li>Dashboard layout + sidebar + header</li>
+                <li>Cards, table, empty states</li>
+                <li>Theme-ready tokens</li>
+                <li>Use on 1 product</li>
+              </ul>
+
+              <div class="pricing-card-actions">
+  <a class="button button--primary" href="#">Get Solo</a>
+</div>
+            </article>
+
+            <article class="card reveal reveal-delay-1 pricing-card--highlight" style="border-color: rgba(99,102,241,0.35);">
+              <header class="card-header">
+                <div>
+                  <p class="card-label">Team</p>
+                  <h3 class="card-title">€79</h3>
+                </div>
+                <div class="chip">Best value</div>
+              </header>
+
+              <ul class="activity-list">
+                <li>Everything in Solo</li>
+                <li>Use on unlimited products</li>
+                <li>Priority updates</li>
+                <li>Commercial use</li>
+              </ul>
+
+              <div class="pricing-card-actions">
+  <a class="button button--primary" href="#">Get Team</a>
+</div>
+            </article>
+          </section>
+        </section>
+
+        <section class="content-section" id="pricing-faq">
+  <header class="section-header">
+    <h2 class="section-title">FAQ</h2>
+  </header>
+
+          <div class="card reveal">
+            <p class="muted"><strong>Is this tied to a framework?</strong> No — clean HTML/CSS/JS.</p>
+            <p class="muted"><strong>Can I theme it?</strong> Yes — design tokens are already structured for theme switching.</p>
+            <p class="muted"><strong>Is it production-ready?</strong> It’s a UI kit: layout + components + patterns. Hook your backend later.</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

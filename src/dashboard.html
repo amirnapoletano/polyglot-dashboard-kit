@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../style.css" />
+  <script src="./main.js" defer></script>
+</head>
+
+<body class="page" data-theme="light" data-sidebar="expanded" data-nav="closed">
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-label="Dashboard" href="dashboard.html">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a class="nav-item" data-label="Analytics" href="#">
+          <span class="nav-icon" aria-hidden="true">◔</span>
+          <span class="nav-label">Analytics</span>
+        </a>
+        <a class="nav-item" data-label="Users" href="users.html">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Users</span>
+        </a>
+        <a class="nav-item" data-label="Billing" href="#">
+          <span class="nav-icon" aria-hidden="true">⟠</span>
+          <span class="nav-label">Billing</span>
+        </a>
+        <a class="nav-item" data-label="Settings" href="settings.html">
+          <span class="nav-icon" aria-hidden="true">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+        <a class="nav-item" data-label="Pricing" href="pricing.html">
+          <span class="nav-icon" aria-hidden="true">€</span>
+          <span class="nav-label">Pricing</span>
+        </a>
+      </nav>
+    </aside>
+
+<!-- MOBILE OVERLAY -->
+<div class="overlay" data-overlay></div>
+
+<!-- MAIN -->
+<div class="app-main">
+      <!-- TOP BAR -->
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Overview of your product performance</p>
+        </div>
+
+        <div class="app-actions">
+  <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" data-sidebar-toggle>
+    <span class="sidebar-toggle-icon">☰</span>
+  </button>
+
+  <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+    <span class="theme-toggle-icon">☾</span>
+  </button>
+
+  <div class="avatar">A</div>
+</div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="app-content">
+
+        <!-- KPI CARDS -->
+         <section class="grid grid--4">
+  <article class="card reveal">
+    <p class="card-label">MRR</p>
+    <p class="card-value">€12,480</p>
+  </article>
+
+  <article class="card reveal reveal-delay-1">
+    <p class="card-label">Active users</p>
+    <p class="card-value">2,314</p>
+  </article>
+
+  <article class="card reveal reveal-delay-2">
+    <p class="card-label">Churn</p>
+    <p class="card-value">1.9%</p>
+  </article>
+
+  <article class="card reveal reveal-delay-3">
+    <p class="card-label">ARPU</p>
+    <p class="card-value">€54</p>
+  </article>
+</section>
+        <!-- CHARTS -->
+<section class="grid grid--2">
+  <article class="card reveal">
+    <header class="card-header">
+      <div>
+        <p class="card-label">Performance</p>
+        <h3 class="card-title">Revenue trend</h3>
+      </div>
+      <div class="chip">Last 30 days</div>
+    </header>
+
+    <div class="chart">
+      <div class="chart-grid"></div>
+      <svg class="chart-svg" viewBox="0 0 600 220" aria-label="Chart placeholder" role="img">
+        <path class="chart-line" d="M20,170 C80,120 120,140 170,105 C220,70 260,95 310,80 C360,65 410,95 460,60 C510,25 560,55 580,40" />
+        <path class="chart-fill" d="M20,170 C80,120 120,140 170,105 C220,70 260,95 310,80 C360,65 410,95 460,60 C510,25 560,55 580,40 L580,220 L20,220 Z" />
+      </svg>
+
+      <div class="chart-legend">
+        <span class="legend-dot"></span>
+        <span class="muted">Revenue</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal reveal-delay-1">
+    <header class="card-header">
+      <div>
+        <p class="card-label">Health</p>
+        <h3 class="card-title">Active vs churn</h3>
+      </div>
+      <div class="chip chip--ghost">Weekly</div>
+    </header>
+
+    <div class="mini-bars" aria-label="Bar placeholder" role="img">
+      <div class="bar" style="height: 40%"></div>
+      <div class="bar" style="height: 55%"></div>
+      <div class="bar" style="height: 35%"></div>
+      <div class="bar" style="height: 70%"></div>
+      <div class="bar" style="height: 60%"></div>
+      <div class="bar" style="height: 85%"></div>
+      <div class="bar" style="height: 65%"></div>
+      <div class="bar" style="height: 75%"></div>
+      <div class="bar" style="height: 50%"></div>
+      <div class="bar" style="height: 90%"></div>
+      <div class="bar" style="height: 72%"></div>
+      <div class="bar" style="height: 58%"></div>
+    </div>
+
+    <p class="muted" style="margin-top: 0.9rem;">Drop in your real chart later — this is a calm placeholder component.</p>
+  </article>
+</section>
+
+        <!-- DATA -->
+        <section class="content-section">
+          <header class="section-header section-header--table">
+            <h2 class="section-title">Recent activity</h2>
+
+            <div class="table-controls">
+              <input
+                type="search"
+                class="table-search"
+                placeholder="Search users…"
+                aria-label="Search users"
+              />
+
+              <button class="table-sort" data-sort="user" type="button">
+                User
+                <span class="sort-indicator">↕</span>
+              </button>
+
+              <button class="table-sort" data-sort="mrr" type="button">
+                MRR
+                <span class="sort-indicator">↕</span>
+              </button>
+            </div>
+          </header>
+
+          <div class="card reveal">
+  <div class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Plan</th>
+          <th>Status</th>
+          <th style="text-align:right;">MRR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>alex.morgan@email.com</td>
+          <td>Team</td>
+          <td><span class="pill pill--good">Active</span></td>
+          <td style="text-align:right;">€59</td>
+        </tr>
+        <tr>
+          <td>sam.lee@email.com</td>
+          <td>Solo</td>
+          <td><span class="pill">Trial</span></td>
+          <td style="text-align:right;">€0</td>
+        </tr>
+        <tr>
+          <td>maria.rossi@email.com</td>
+          <td>Solo</td>
+          <td><span class="pill pill--warn">Past due</span></td>
+          <td style="text-align:right;">€29</td>
+        </tr>
+        <tr>
+          <td>noah.khan@email.com</td>
+          <td>Team</td>
+          <td><span class="pill pill--bad">Canceled</span></td>
+          <td style="text-align:right;">€0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+        </section>
+
+        <!-- ACTIVITY -->
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">Activity feed</h2>
+          </header>
+
+          <div class="card reveal">
+            <ul class="activity-list">
+              <li>User signed up</li>
+              <li>Subscription upgraded</li>
+              <li>Invoice paid</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section">
+  <header class="section-header">
+    <h2 class="section-title">Empty state</h2>
+  </header>
+
+  <div class="card reveal reveal-delay-2">
+    <div class="empty">
+      <h3 class="empty-title">No reports yet</h3>
+      <p class="empty-text">
+        When your product starts collecting data, reports will show up here. This card is an empty-state template you can reuse anywhere.
+      </p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="#" class="button button--primary">Create report</a>
+        <a href="#" class="button button--ghost">Learn more</a>
+      </div>
+    </div>
+  </div>
+</section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
