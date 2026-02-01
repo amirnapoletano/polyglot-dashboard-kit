@@ -168,3 +168,47 @@ function applyUsersFilters() {
 if (usersSearch) usersSearch.addEventListener('input', applyUsersFilters);
 if (usersStatus) usersStatus.addEventListener('change', applyUsersFilters);
 if (usersPlan) usersPlan.addEventListener('change', applyUsersFilters);
+
+// ---- Billing: invoices filters (UI-only)
+const invoicesSearch = document.querySelector('[data-invoices-search]');
+const invoicesStatus = document.querySelector('[data-invoices-status]');
+const invoicesRows = document.querySelectorAll('[data-invoices-table] tbody tr');
+
+function applyInvoiceFilters() {
+  const q = (invoicesSearch?.value || '').trim().toLowerCase();
+  const status = invoicesStatus?.value || 'all';
+
+  invoicesRows.forEach((row) => {
+    const text = row.innerText.toLowerCase();
+    const rowStatus = row.getAttribute('data-status') || '';
+
+    const matchesQuery = !q || text.includes(q);
+    const matchesStatus = status === 'all' || rowStatus === status;
+
+    row.style.display = matchesQuery && matchesStatus ? '' : 'none';
+  });
+}
+
+if (invoicesSearch) invoicesSearch.addEventListener('input', applyInvoiceFilters);
+if (invoicesStatus) invoicesStatus.addEventListener('change', applyInvoiceFilters);
+
+// ---- Analytics: update chip + legend text (UI-only)
+const analyticsRange = document.querySelector('[data-analytics-range]');
+const analyticsMetric = document.querySelector('[data-analytics-metric]');
+const analyticsChip = document.querySelector('[data-analytics-chip]');
+const analyticsLegend = document.querySelector('[data-analytics-legend]');
+
+function syncAnalyticsUI() {
+  if (analyticsChip && analyticsRange) {
+    const map = { '7': 'Last 7 days', '30': 'Last 30 days', '90': 'Last 90 days' };
+    analyticsChip.textContent = map[analyticsRange.value] || 'Last 30 days';
+  }
+  if (analyticsLegend && analyticsMetric) {
+    const map = { revenue: 'Revenue', active: 'Active users', churn: 'Churn' };
+    analyticsLegend.textContent = map[analyticsMetric.value] || 'Revenue';
+  }
+}
+
+if (analyticsRange) analyticsRange.addEventListener('change', syncAnalyticsUI);
+if (analyticsMetric) analyticsMetric.addEventListener('change', syncAnalyticsUI);
+syncAnalyticsUI();

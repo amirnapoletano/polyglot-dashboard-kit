@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../style.css" />
+  <script src="./main.js" defer></script>
+</head>
+
+<body class="page" data-sidebar="expanded" data-nav="closed">
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" data-label="Dashboard" href="./dashboard.html">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a class="nav-item" data-label="Analytics" href="./analytics.html">
+          <span class="nav-icon" aria-hidden="true">◔</span>
+          <span class="nav-label">Analytics</span>
+        </a>
+        <a class="nav-item" data-label="Users" href="./users.html">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Users</span>
+        </a>
+        <a class="nav-item" data-label="Billing" href="./billing.html">
+          <span class="nav-icon" aria-hidden="true">⟠</span>
+          <span class="nav-label">Billing</span>
+        </a>
+        <a class="nav-item" data-label="Settings" href="./settings.html">
+          <span class="nav-icon" aria-hidden="true">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+        <a class="nav-item active" data-label="Security" href="./settings-security.html">
+          <span class="nav-icon" aria-hidden="true">⛨</span>
+          <span class="nav-label">Security</span>
+        </a>
+        <a class="nav-item" data-label="Pricing" href="./pricing.html">
+          <span class="nav-icon" aria-hidden="true">€</span>
+          <span class="nav-label">Pricing</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="overlay" data-overlay></div>
+
+    <!-- MAIN -->
+    <div class="app-main">
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Security</h1>
+          <p class="page-subtitle">API keys, sessions, and account safety</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" data-sidebar-toggle>
+            <span class="sidebar-toggle-icon">☰</span>
+          </button>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <main class="app-content">
+
+        <!-- API KEYS -->
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">API keys</h2>
+            <p class="page-subtitle">Use this UI to manage keys (your backend will do the real work).</p>
+          </header>
+
+          <div class="card reveal">
+            <div class="key-row">
+              <div>
+                <p class="key-title">Production key</p>
+                <p class="key-meta muted">Created 2026-01-12 · Last used 2 hours ago</p>
+              </div>
+              <div class="key-actions">
+                <span class="code-pill">pk_live_•••••••••••</span>
+                <button class="button button--ghost" type="button">Copy</button>
+                <button class="button button--ghost" type="button">Rotate</button>
+              </div>
+            </div>
+
+            <div class="key-row">
+              <div>
+                <p class="key-title">Staging key</p>
+                <p class="key-meta muted">Created 2025-12-03 · Last used yesterday</p>
+              </div>
+              <div class="key-actions">
+                <span class="code-pill">pk_test_••••••••••</span>
+                <button class="button button--ghost" type="button">Copy</button>
+                <button class="button button--ghost" type="button">Revoke</button>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 1rem;">
+              <a href="#" class="button button--primary">Create new key</a>
+              <a href="#" class="button button--ghost">Docs</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- SESSIONS -->
+        <section class="content-section">
+          <header class="section-header section-header--table">
+            <h2 class="section-title">Active sessions</h2>
+            <div class="table-controls">
+              <input type="search" class="table-search" placeholder="Search sessions…" aria-label="Search sessions" />
+              <select class="table-sort" aria-label="Filter sessions">
+                <option>All</option>
+                <option>Current device</option>
+                <option>Other devices</option>
+              </select>
+            </div>
+          </header>
+
+          <div class="card reveal">
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Device</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th style="text-align:right;">Last active</th>
+                    <th style="text-align:right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>MacBook Pro · Chrome</td>
+                    <td>Netherlands</td>
+                    <td><span class="pill pill--good">Current</span></td>
+                    <td style="text-align:right;">Now</td>
+                    <td style="text-align:right;"><span class="muted">—</span></td>
+                  </tr>
+                  <tr>
+                    <td>iPhone · Safari</td>
+                    <td>Portugal</td>
+                    <td><span class="pill">Active</span></td>
+                    <td style="text-align:right;">2 days ago</td>
+                    <td style="text-align:right;"><a class="button button--ghost" href="#" style="padding:0.45rem 0.75rem;">Sign out</a></td>
+                  </tr>
+                  <tr>
+                    <td>Windows · Edge</td>
+                    <td>Germany</td>
+                    <td><span class="pill pill--warn">Suspicious</span></td>
+                    <td style="text-align:right;">7 days ago</td>
+                    <td style="text-align:right;"><a class="button button--ghost" href="#" style="padding:0.45rem 0.75rem;">Revoke</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="muted" style="margin-top: 0.9rem;">
+              Tip: wire this to your auth provider later (Supabase/Auth.js/etc.).
+            </p>
+          </div>
+        </section>
+
+        <!-- DANGER ZONE -->
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">Danger zone</h2>
+            <p class="page-subtitle">High-risk actions should be visually separated.</p>
+          </header>
+
+          <div class="card reveal reveal-delay-1 danger">
+            <div class="danger-row">
+              <div>
+                <p class="danger-title">Reset 2FA</p>
+                <p class="danger-meta muted">If you lose your authenticator, you can reset it here.</p>
+              </div>
+              <button class="button danger-button" type="button">Reset</button>
+            </div>
+
+            <div class="danger-row">
+              <div>
+                <p class="danger-title">Delete account</p>
+                <p class="danger-meta muted">Permanently deletes all data. No undo.</p>
+              </div>
+              <button class="button danger-button" type="button">Delete</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

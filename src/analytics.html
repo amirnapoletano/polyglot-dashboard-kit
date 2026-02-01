@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../style.css" />
+  <script src="./main.js" defer></script>
+</head>
+
+<body class="page" data-sidebar="expanded" data-nav="closed">
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" data-label="Dashboard" href="./dashboard.html">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a class="nav-item active" data-label="Analytics" href="./analytics.html">
+          <span class="nav-icon" aria-hidden="true">◔</span>
+          <span class="nav-label">Analytics</span>
+        </a>
+        <a class="nav-item" data-label="Users" href="./users.html">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Users</span>
+        </a>
+        <a class="nav-item" data-label="Billing" href="./billing.html">
+          <span class="nav-icon" aria-hidden="true">⟠</span>
+          <span class="nav-label">Billing</span>
+        </a>
+        <a class="nav-item" data-label="Settings" href="./settings.html">
+          <span class="nav-icon" aria-hidden="true">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+        <a class="nav-item" data-label="Security" href="./settings-security.html">
+          <span class="nav-icon" aria-hidden="true">⛨</span>
+          <span class="nav-label">Security</span>
+        </a>
+        <a class="nav-item" data-label="Pricing" href="./pricing.html">
+          <span class="nav-icon" aria-hidden="true">€</span>
+          <span class="nav-label">Pricing</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="overlay" data-overlay></div>
+
+    <!-- MAIN -->
+    <div class="app-main">
+
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Analytics</h1>
+          <p class="page-subtitle">Charts + filters (placeholder UI you can wire later)</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" data-sidebar-toggle>
+            <span class="sidebar-toggle-icon">☰</span>
+          </button>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <main class="app-content">
+
+        <!-- FILTER BAR -->
+        <section class="content-section">
+          <div class="card reveal analytics-filterbar">
+            <div class="analytics-filterbar-left">
+              <p class="card-label" style="margin:0;">Filters</p>
+              <p class="muted" style="margin:0;">UI-only controls for your real charts</p>
+            </div>
+
+            <div class="analytics-filterbar-right">
+              <select class="table-sort" aria-label="Range" data-analytics-range>
+                <option value="7">Last 7 days</option>
+                <option value="30" selected>Last 30 days</option>
+                <option value="90">Last 90 days</option>
+              </select>
+
+              <select class="table-sort" aria-label="Metric" data-analytics-metric>
+                <option value="revenue" selected>Revenue</option>
+                <option value="active">Active users</option>
+                <option value="churn">Churn</option>
+              </select>
+
+              <button class="button button--primary" type="button">Export</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- KPI STRIP -->
+        <section class="grid grid--4">
+          <article class="card reveal">
+            <p class="card-label">Revenue</p>
+            <p class="card-value">€42,190</p>
+          </article>
+          <article class="card reveal reveal-delay-1">
+            <p class="card-label">New users</p>
+            <p class="card-value">+384</p>
+          </article>
+          <article class="card reveal reveal-delay-2">
+            <p class="card-label">Conversion</p>
+            <p class="card-value">3.8%</p>
+          </article>
+          <article class="card reveal reveal-delay-3">
+            <p class="card-label">Refunds</p>
+            <p class="card-value">€490</p>
+          </article>
+        </section>
+
+        <!-- CHARTS -->
+        <section class="grid grid--2">
+          <article class="card reveal">
+            <header class="card-header">
+              <div>
+                <p class="card-label">Growth</p>
+                <h3 class="card-title">Revenue trend</h3>
+              </div>
+              <div class="chip" data-analytics-chip>Last 30 days</div>
+            </header>
+
+            <div class="chart">
+              <div class="chart-grid"></div>
+              <svg class="chart-svg" viewBox="0 0 600 220" aria-label="Chart placeholder" role="img">
+                <path class="chart-line" d="M20,170 C80,120 120,140 170,105 C220,70 260,95 310,80 C360,65 410,95 460,60 C510,25 560,55 580,40" />
+                <path class="chart-fill" d="M20,170 C80,120 120,140 170,105 C220,70 260,95 310,80 C360,65 410,95 460,60 C510,25 560,55 580,40 L580,220 L20,220 Z" />
+              </svg>
+
+              <div class="chart-legend">
+                <span class="legend-dot"></span>
+                <span class="muted" data-analytics-legend>Revenue</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal reveal-delay-1">
+            <header class="card-header">
+              <div>
+                <p class="card-label">Channels</p>
+                <h3 class="card-title">Acquisition mix</h3>
+              </div>
+              <div class="chip chip--ghost">This week</div>
+            </header>
+
+            <div class="donut" aria-label="Donut placeholder" role="img">
+              <div class="donut-ring"></div>
+              <div class="donut-label">
+                <p class="donut-title">Top channel</p>
+                <p class="donut-value">Organic</p>
+              </div>
+            </div>
+
+            <div class="donut-legend">
+              <span class="pill">Organic</span>
+              <span class="pill">Paid</span>
+              <span class="pill">Referral</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- TABLE -->
+        <section class="content-section">
+          <header class="section-header section-header--table">
+            <h2 class="section-title">Top pages</h2>
+            <div class="table-controls">
+              <input type="search" class="table-search" placeholder="Search pages…" aria-label="Search pages" />
+              <button class="table-sort" type="button">Views <span class="sort-indicator">↕</span></button>
+              <button class="table-sort" type="button">Conv. <span class="sort-indicator">↕</span></button>
+            </div>
+          </header>
+
+          <div class="card reveal">
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Page</th>
+                    <th>Source</th>
+                    <th style="text-align:right;">Views</th>
+                    <th style="text-align:right;">Conversion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>/pricing</td>
+                    <td><span class="pill">Organic</span></td>
+                    <td style="text-align:right;">18,420</td>
+                    <td style="text-align:right;">4.2%</td>
+                  </tr>
+                  <tr>
+                    <td>/docs</td>
+                    <td><span class="pill">Referral</span></td>
+                    <td style="text-align:right;">9,104</td>
+                    <td style="text-align:right;">1.8%</td>
+                  </tr>
+                  <tr>
+                    <td>/onboarding</td>
+                    <td><span class="pill">Paid</span></td>
+                    <td style="text-align:right;">6,220</td>
+                    <td style="text-align:right;">3.1%</td>
+                  </tr>
+                  <tr>
+                    <td>/dashboard</td>
+                    <td><span class="pill">Direct</span></td>
+                    <td style="text-align:right;">4,891</td>
+                    <td style="text-align:right;">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

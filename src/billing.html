@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billing · Polyglot Dashboard Kit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../style.css" />
+  <script src="./main.js" defer></script>
+</head>
+
+<body class="page" data-sidebar="expanded" data-nav="closed">
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">◎</span>
+        <span class="sidebar-title">Polyglot</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" data-label="Dashboard" href="./dashboard.html">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a class="nav-item" data-label="Analytics" href="./analytics.html">
+          <span class="nav-icon" aria-hidden="true">◔</span>
+          <span class="nav-label">Analytics</span>
+        </a>
+        <a class="nav-item" data-label="Users" href="./users.html">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Users</span>
+        </a>
+        <a class="nav-item active" data-label="Billing" href="./billing.html">
+          <span class="nav-icon" aria-hidden="true">⟠</span>
+          <span class="nav-label">Billing</span>
+        </a>
+        <a class="nav-item" data-label="Settings" href="./settings.html">
+          <span class="nav-icon" aria-hidden="true">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+        <a class="nav-item" data-label="Security" href="./settings-security.html">
+          <span class="nav-icon" aria-hidden="true">⛨</span>
+          <span class="nav-label">Security</span>
+        </a>
+        <a class="nav-item" data-label="Pricing" href="./pricing.html">
+          <span class="nav-icon" aria-hidden="true">€</span>
+          <span class="nav-label">Pricing</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="overlay" data-overlay></div>
+
+    <!-- MAIN -->
+    <div class="app-main">
+      <!-- TOP BAR -->
+      <header class="app-header">
+        <div>
+          <h1 class="page-title">Billing</h1>
+          <p class="page-subtitle">Plans, invoices, and payment status</p>
+        </div>
+
+        <div class="app-actions">
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar" data-sidebar-toggle>
+            <span class="sidebar-toggle-icon">☰</span>
+          </button>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+            <span class="theme-toggle-icon">☾</span>
+          </button>
+
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <main class="app-content">
+
+        <!-- PLAN OVERVIEW -->
+        <section class="content-section">
+          <header class="section-header">
+            <h2 class="section-title">Current plan</h2>
+            <p class="page-subtitle">This is UI-only. Wire Stripe later.</p>
+          </header>
+
+          <div class="grid grid--3">
+            <article class="card reveal plan-card plan-card--current">
+              <header class="card-header">
+                <div>
+                  <p class="card-label">Plan</p>
+                  <h3 class="card-title">Team</h3>
+                </div>
+                <div class="chip">Current</div>
+              </header>
+
+              <p class="plan-price">€79<span class="plan-price-muted">/mo</span></p>
+              <ul class="plan-list">
+                <li>Unlimited products</li>
+                <li>Team members</li>
+                <li>Priority updates</li>
+              </ul>
+
+              <div class="plan-actions">
+                <a class="button button--ghost" href="#">Manage</a>
+                <a class="button button--primary" href="#">Upgrade</a>
+              </div>
+            </article>
+
+            <article class="card reveal reveal-delay-1 plan-card">
+              <header class="card-header">
+                <div>
+                  <p class="card-label">Add-on</p>
+                  <h3 class="card-title">Extra seats</h3>
+                </div>
+                <div class="chip chip--ghost">Optional</div>
+              </header>
+
+              <p class="plan-price">€9<span class="plan-price-muted">/seat</span></p>
+              <ul class="plan-list">
+                <li>Per-seat billing</li>
+                <li>Monthly changes</li>
+                <li>Seats sync to team</li>
+              </ul>
+
+              <div class="plan-actions">
+                <a class="button button--primary" href="#">Add seats</a>
+              </div>
+            </article>
+
+            <article class="card reveal reveal-delay-2 plan-card">
+              <header class="card-header">
+                <div>
+                  <p class="card-label">Payment</p>
+                  <h3 class="card-title">Card on file</h3>
+                </div>
+                <div class="chip chip--ghost">Visa</div>
+              </header>
+
+              <div class="key-row" style="margin-top: 0.25rem;">
+                <div>
+                  <p class="key-title">•••• 4242</p>
+                  <p class="key-meta muted">Expires 07/28 · Netherlands</p>
+                </div>
+                <span class="pill pill--good">Active</span>
+              </div>
+
+              <div class="plan-actions" style="margin-top: 1rem;">
+                <a class="button button--ghost" href="#">Update card</a>
+                <a class="button button--ghost" href="#">Billing details</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- INVOICES -->
+        <section class="content-section">
+          <header class="section-header section-header--table">
+            <h2 class="section-title">Invoices</h2>
+
+            <div class="table-controls">
+              <input
+                type="search"
+                class="table-search"
+                placeholder="Search invoices…"
+                aria-label="Search invoices"
+                data-invoices-search
+              />
+
+              <select class="table-sort" aria-label="Filter by status" data-invoices-status>
+                <option value="all">Status: All</option>
+                <option value="paid">Paid</option>
+                <option value="open">Open</option>
+                <option value="past-due">Past due</option>
+              </select>
+
+              <button class="table-sort" type="button">
+                Date <span class="sort-indicator">↕</span>
+              </button>
+            </div>
+          </header>
+
+          <div class="card reveal">
+            <div class="table-wrap">
+              <table class="table" data-invoices-table>
+                <thead>
+                  <tr>
+                    <th>Invoice</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th style="text-align:right;">Amount</th>
+                    <th style="text-align:right;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-status="paid">
+                    <td>#INV-2403</td>
+                    <td>2026-01-28</td>
+                    <td><span class="pill pill--good">Paid</span></td>
+                    <td style="text-align:right;">€79</td>
+                    <td style="text-align:right;"><a class="button button--ghost" href="#" style="padding:0.45rem 0.75rem;">PDF</a></td>
+                  </tr>
+                  <tr data-status="paid">
+                    <td>#INV-2402</td>
+                    <td>2025-12-28</td>
+                    <td><span class="pill pill--good">Paid</span></td>
+                    <td style="text-align:right;">€79</td>
+                    <td style="text-align:right;"><a class="button button--ghost" href="#" style="padding:0.45rem 0.75rem;">PDF</a></td>
+                  </tr>
+                  <tr data-status="open">
+                    <td>#INV-2401</td>
+                    <td>2025-11-28</td>
+                    <td><span class="pill">Open</span></td>
+                    <td style="text-align:right;">€79</td>
+                    <td style="text-align:right;"><a class="button button--primary" href="#" style="padding:0.45rem 0.75rem;">Pay</a></td>
+                  </tr>
+                  <tr data-status="past-due">
+                    <td>#INV-2399</td>
+                    <td>2025-10-28</td>
+                    <td><span class="pill pill--warn">Past due</span></td>
+                    <td style="text-align:right;">€79</td>
+                    <td style="text-align:right;"><a class="button button--ghost" href="#" style="padding:0.45rem 0.75rem;">Retry</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="empty">
+              <h3 class="empty-title">Empty state pattern</h3>
+              <p class="empty-text">
+                If your user has no invoices yet, drop this card in place of the table.
+              </p>
+              <div class="hero-actions" style="justify-content:center;">
+                <a href="#" class="button button--primary">Create first invoice</a>
+                <a href="#" class="button button--ghost">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>
