@@ -35,7 +35,7 @@
           <span class="nav-icon" aria-hidden="true">◔</span>
           <span class="nav-label">Analytics</span>
         </a>
-        <a class="nav-item active" data-label="Users" href="./users.html">
+        <a class="nav-item" data-label="Users" href="./users.html">
           <span class="nav-icon" aria-hidden="true">👤</span>
           <span class="nav-label">Users</span>
         </a>
@@ -161,13 +161,18 @@
           </div>
 
           <div class="card reveal reveal-delay-1">
-            <div class="empty">
-              <h3 class="empty-title">Tip: wire this later</h3>
-              <p class="empty-text">
-                This page is UI-only. Connect your backend and replace the rows, or render via your framework of choice.
-              </p>
-            </div>
-          </div>
+  <div class="empty">
+    <div class="empty-icon" aria-hidden="true">👤</div>
+    <h3 class="empty-title">No users found</h3>
+    <p class="empty-text">
+      This table is UI-only. Plug your backend later or render these rows through your framework of choice.
+    </p>
+    <div class="empty-actions">
+      <a href="#" class="button button--primary">Invite user</a>
+      <a href="#" class="button button--ghost">Import CSV</a>
+    </div>
+  </div>
+</div>
         </section>
 
       </main>

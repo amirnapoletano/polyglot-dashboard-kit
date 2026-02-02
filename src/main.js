@@ -212,3 +212,18 @@ function syncAnalyticsUI() {
 if (analyticsRange) analyticsRange.addEventListener('change', syncAnalyticsUI);
 if (analyticsMetric) analyticsMetric.addEventListener('change', syncAnalyticsUI);
 syncAnalyticsUI();
+
+// ---- Sidebar active state (auto)
+(function syncActiveNav() {
+  const current = window.location.pathname.split("/").pop();
+  const navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach(item => {
+    const href = item.getAttribute("href")?.split("/").pop();
+    if (href === current) {
+      item.classList.add("is-active");
+    } else {
+      item.classList.remove("is-active");
+    }
+  });
+})();
