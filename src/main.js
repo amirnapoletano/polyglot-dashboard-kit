@@ -44,7 +44,7 @@ function setNavOpen(isOpen) {
 }
 
 function isMobile() {
-  return window.matchMedia('(max-width: 900px)').matches;
+  return window.matchMedia('(max-width: 1024px)').matches;
 }
 
 // Init defaults
@@ -96,6 +96,13 @@ if (window.matchMedia) {
 if (overlay) {
   overlay.addEventListener('click', () => setNavOpen(false));
 }
+
+// Close drawer after choosing a nav item on mobile/tablet.
+document.querySelectorAll('.sidebar .nav-item').forEach((item) => {
+  item.addEventListener('click', () => {
+    if (isMobile()) setNavOpen(false);
+  });
+});
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') setNavOpen(false);
